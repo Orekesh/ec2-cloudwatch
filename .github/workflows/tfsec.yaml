@@ -1,0 +1,12 @@
+name: tfsec
+on:
+  pull_request:
+jobs:
+  sast:
+    name: tfsec
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+      - name: tfsec
+        uses: aquasecurity/tfsec-action@v1.0.0
